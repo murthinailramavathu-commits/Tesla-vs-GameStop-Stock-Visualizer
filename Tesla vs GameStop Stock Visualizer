@@ -1,0 +1,11 @@
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+tsla = yf.download("TSLA", period="6mo")['Close']
+gme = yf.download("GME", period="6mo")['Close']
+
+tsla.plot(label='TSLA')
+gme.plot(label='GME')
+plt.legend()
+plt.title("TSLA vs GME")
+plt.show()
